@@ -1,0 +1,32 @@
+# Ignore the Rust target directory
+/target/
+
+# Ignore Cargo.lock if it's a library
+# Uncomment this if you're building a library, but not for binary projects
+# /Cargo.lock
+
+# Ignore compiled binaries
+*.exe
+*.exe~
+*.out
+*.o
+
+# Ignore temporary files
+*.tmp
+*.swp
+*.swo
+
+# Ignore editor-specific files
+.vscode/
+.idea/
+
+# Ignore backup files
+*.bak
+
+# Ignore logs
+*.log
+
+# Ignore by-name files
+.DS_Store
+Thumbs.db
+
