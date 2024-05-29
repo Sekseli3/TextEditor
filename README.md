@@ -1,2 +1,2 @@
 # TextEditor
-Self made Text Editor
+Text Editor made by me and Veikka :)
