@@ -16,13 +16,13 @@ pub fn handle_input(state: State) -> anyhow::Result<()> {
         stdout.flush()?;
         match read()? {
             crossterm::event::Event::Key(event) => match event.code {
-                crossterm::event::KeyCode::Char('q') => break,
+                crossterm::event::KeyCode::Char(':') => break,
                 crossterm::event::KeyCode::Char('i') => {
                     if current_state == &state.normal {
                         current_state = &state.insert;
                     }
                 }
-                crossterm::event::KeyCode::Char('a') => {
+                crossterm::event::KeyCode::Esc => {
                     if current_state == &state.insert {
                         current_state = &state.normal;
                     }
