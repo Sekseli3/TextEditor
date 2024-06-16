@@ -1,6 +1,6 @@
-use std::io::{stdout, Write};
+use std::io::stdout;
 
-use crossterm::{cursor, event::read, terminal, ExecutableCommand, QueueableCommand};
+use crossterm::{terminal, ExecutableCommand};
 
 mod reader;
 // this gives error match arms have imcompitable types, fix it
