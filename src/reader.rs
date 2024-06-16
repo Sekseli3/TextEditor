@@ -83,6 +83,21 @@ pub fn handle_input(state: State) -> anyhow::Result<()> {
                         handle_insert('l', &mut cx, &mut buffer);
                     }
                 }
+                crossterm::event::KeyCode::Backspace => {
+                    if current_state == &state.insert {
+                        buffer.pop();
+                        cx -= 1;
+                        std::write!(stdout, "\u{8} \u{8}").unwrap();
+                    }
+                }
+                crossterm::event::KeyCode::Enter => {
+                    if current_state == &state.insert {
+                        buffer.push('\n');
+                        cx = 0;
+                        cy += 1;
+                        std::write!(stdout, "\n").unwrap();
+                    }
+                }
                 crossterm::event::KeyCode::Char(c) => {
                     if current_state == &state.insert {
                         handle_insert(c, &mut cx, &mut buffer);
